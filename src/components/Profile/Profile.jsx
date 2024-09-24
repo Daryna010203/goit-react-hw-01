@@ -1,36 +1,37 @@
-import './Profile.module.css'
+import profile from'./Profile.module.css'
 
 
 const Profile = (props) => {
   const {name, tag, location, image, stats} = props;
 
   return (
-    <div>
+    <section className={profile.section}>
   <div>
-    <img
+    <img className={profile.account}
       src={image}
       alt={name}
     />
-    <p>{name}</p>
-    <p>@{tag}</p>
-    <p>{location}</p>
+    <h2 className={profile.title}>{name}</h2>
+    <p className={profile.text}>@{tag}</p>
+    <p className={profile.text}>{location}</p>
   </div>
 
-  <ul>
-    <li>
+  <ul className={profile.inform}>
+    <li className={profile.informbox}>
       <span>Followers</span>
           <span>{stats.followers}</span>
     </li>
-    <li>
+    <li className={profile.informbox}>
       <span>Views</span>
       <span>{stats.views}</span>
     </li>
-    <li>
-      <span>Likes</span>
+    <li className={profile.informbox}>
+      <span >Likes</span>
       <span>{stats.likes}</span>
     </li>
-  </ul>
-</div>    
+        </ul>
+        
+</section>    
   );
 };
 

@@ -1,38 +1,33 @@
-import './TransactionHistory.module.css'
+import transactionHistory from './TransactionHistory.module.css'
 
 
 
 function TransactionHistory({ items }) {
     return (
-      <li>
-      {items.map(item => {
-    return (
-    <table key={item.id}>
-  <thead>
-    <tr>
-      <th>{item.type}</th>
-      <th>{item.amount}</th>
-      <th>{item.currency}</th>
+        <table className={transactionHistory.table}>
+  <thead className={transactionHistory.tableThead}>
+    <tr >
+      <th className={transactionHistory.tableTab}>Type</th>
+      <th className={transactionHistory.tableTab}>Amount</th>
+      <th className={transactionHistory.tableTab}>Currency</th>
     </tr>
   </thead>
-
-  <tbody>
-    <tr>
-      <td>Invoice</td>
-      <td>125</td>
-      <td>USD</td>
-    </tr>
-    <tr>
-      <td>Withdrawal</td>
-      <td>85</td>
-      <td>USD</td>
-    </tr>
-  </tbody>
-</table>
-        )
-      })}
-            </li>
-  )
+<tbody className={transactionHistory.tableBody}>
+                {items.map(item => {
+                    return (
+                        <tr key={item.id}>
+                            <td className={transactionHistory.tableTab}>{item.type}</td>
+                            <td className={transactionHistory.tableTab}>{item.amount}</td>
+                            <td className={transactionHistory.tableTab}>{item.currency}</td>
+                        </tr>
+                    )
+                }
+                )
+                }
+      </tbody>
+    </table>
+  );
 }
+
 
 export default TransactionHistory

@@ -12,7 +12,7 @@ const Profile = (props) => {
       alt={name}
     />
     <p>{name}</p>
-    <p>{tag}</p>
+    <p>@{tag}</p>
     <p>{location}</p>
   </div>
 
